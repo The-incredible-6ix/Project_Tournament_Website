@@ -1,13 +1,9 @@
-var express = require('express');
-var router = express.Router();
-const User = require('../models/User')
-const Match = require('../models/Match')
+const express = require('express')
+router = express.Router()
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-
+/*GET */
+router.get('/', (req,res)=>{
+    return res.send('homepage')
+})
 
 module.exports = router;

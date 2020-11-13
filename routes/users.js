@@ -1,8 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express')
+router = express.Router()
 const userCtrl = require('../controllers/userCtrl')
 
-/* GET show user dashboard */
-router.get('/', userCtrl.showDashboard);
+/*GET /users/ show dashboard*/
+router.get('/', userCtrl.showDashboard)
+
+router.get('/list', userCtrl.showMatchList)
 
 module.exports = router;
