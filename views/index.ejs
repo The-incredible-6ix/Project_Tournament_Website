@@ -64,7 +64,11 @@
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="javascript:;">Dashboard</a>
+                    <a class="navbar-brand" href="javascript:;"><% if(column==='myTournament'){ %>
+                            Start my tournament
+                        <% }else if(column==='tournamentList'){ %>
+                            My tournament list
+                        <% } %></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="sr-only">Toggle navigation</span>
@@ -93,7 +97,68 @@
         </nav>
         <!-- End Navbar -->
         <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-primary">
+                                <h4 class="card-title ">Tournament management</h4>
+                                <button class="btn btn-primary">Create a tournament</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-primary">
+                                        <th>
+                                            ID
+                                        </th>
+                                        <th>
+                                            Tournament Name
+                                        </th>
+                                        <th>
+                                            Number of players
+                                        </th>
+                                        <th>
+                                            Start time
+                                        </th>
+                                        <th>
+                                            Winner
+                                        </th>
+                                        <th>
+                                            Operation
+                                        </th>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                1
+                                            </td>
+                                            <td>
+                                                Football
+                                            </td>
+                                            <td>
+                                                8
+                                            </td>
+                                            <td>
+                                                12.12.2020
+                                            </td>
+                                            <td class="text-primary">
+                                                Max
+                                            </td>
+                                            <td>
+                                                <buton class="btn btn-secondary btn-sm">Modify</buton>
+                                                <buton class="btn btn-danger btn-sm">Delete</buton>
+                                            </td>
 
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <footer class="footer">
             <div class="container-fluid">
