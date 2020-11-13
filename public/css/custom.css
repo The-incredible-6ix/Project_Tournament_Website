@@ -1,1 +1,4 @@
 /*custom css here*/
+.modal{
+    z-index: 100;
+}

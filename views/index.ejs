@@ -64,7 +64,7 @@
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="javascript:;"><% if(column==='myTournament'){ %>
+                    <a class="" href="javascript:;"><% if(column==='myTournament'){ %>
                             Start my tournament
                         <% }else if(column==='tournamentList'){ %>
                             My tournament list
@@ -103,7 +103,59 @@
                         <div class="card">
                             <div class="card-header card-header-primary">
                                 <h4 class="card-title ">Tournament management</h4>
-                                <button class="btn btn-primary">Create a tournament</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    Create a tournament
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="mName">Tournament name</label>
+                                                        <input name="mName" type="text" class="form-control" id="mName" aria-describedby="emailHelp">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="mNumber">Number of players</label>
+                                                        <input name="mNumber" type="number" class="form-control" id="mNumber">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="mPlayers">Players</label>
+                                                        <input name="mPlayers" type="text" class="form-control" id="mPlayers">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="mActiveTime">Start time</label>
+                                                        <input name="mActiveTime" type="date" class="form-control" id="mActiveTime">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="mWinner">Winner</label>
+                                                        <input name="mWinner" type="text" class="form-control" id="mWinner">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="mDescription">Description</label>
+                                                        <textarea name="mDescription" type="text" class="form-control" id="mDescription"></textarea>
+                                                    </div>
+
+
+                                                    <button class="btn btn-primary">Submit</button>
+                                                    <button class="btn btn-default">Cancel</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -256,6 +308,7 @@
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="/public/js/demo.js"></script>
 <script src="/public/js/sidebar.js"></script>
+<!--<script src="/public/js/bootstrap.min.js"></script>-->
 <script>
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
