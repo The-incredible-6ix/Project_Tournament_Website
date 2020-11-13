@@ -8,18 +8,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/***
- * db testing
- */
-router.get('/add', (req,res) => {
-  let match = new Match({
-    mName: req.query.mName,
-    mDescription: req.query.mDescription
-  })
 
-  match.save().then(()=>{
-    console.log('done')
-  })
-})
 
 module.exports = router;

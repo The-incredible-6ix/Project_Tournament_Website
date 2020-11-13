@@ -26,7 +26,7 @@ app.use(session({
 }))
 
 //set up ejs layouts
-app.set('layout', './layouts/layout1')
+// app.set('layout', './layouts/layout1')
 
 // view engine setup
 app.set('view engine', 'ejs');
@@ -34,7 +34,7 @@ app.set('view engine', 'ejs');
 //open folder
 app.use('/public', express.static(__dirname+ '/public'))
 
-app.use(expressLayout)
+// app.use(expressLayout)
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
