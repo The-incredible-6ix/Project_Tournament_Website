@@ -2,6 +2,13 @@
  *GET show user dashboard
  */
 exports.showDashboard = (req,res) =>{
-    console.log(123)
-    res.render('index')
+    res.render('index', {
+        column:'myTournament'
+    })
+}
+
+exports.showMatchList = (req,res) =>{
+    res.render('index', {
+        column:'tournamentList'
+    })
 }

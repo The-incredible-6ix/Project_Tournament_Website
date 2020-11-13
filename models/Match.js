@@ -7,6 +7,7 @@ let matchSchema = new Schema({
     mOwner: String, //store email address
     mNumber: String, //the number of players
     mPlayers: [String],
+    mWinner: String,
     mActiveTime: Date,
     mEndTime: Date,
     mIsActive: Boolean,
