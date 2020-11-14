@@ -101,119 +101,44 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header card-header-primary">
-                                <h4 class="card-title ">Tournament management</h4>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                    Create a tournament
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="addTitle">Add a tournament</h5>
-                                            </div>
-                                            <div class="modal-body">
-                                                    <div class="form-group">
-                                                        <label for="mName">Tournament name</label>
-                                                        <input name="mName" type="text" class="form-control" id="mName" aria-describedby="emailHelp">
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label for="mNumber">Number of players</label>
-                                                        <input name="mNumber" type="number" class="form-control" id="mNumber">
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label for="mPlayers">Players</label>
-                                                        <input name="mPlayers" type="text" class="form-control" id="mPlayers">
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label for="mActiveTime">Start time</label>
-                                                        <input name="mActiveTime" type="date" class="form-control" id="mActiveTime">
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label for="mWinner">Winner</label>
-                                                        <input name="mWinner" type="text" class="form-control" id="mWinner">
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label for="mDescription">Description</label>
-                                                        <textarea name="mDescription" type="text" class="form-control" id="mDescription"></textarea>
-                                                    </div>
-
-
-                                                    <button class="btn btn-primary" id="addBtn">Submit</button>
-                                                    <button class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class=" text-primary">
-                                        <th>
-                                            ID
-                                        </th>
-                                        <th>
-                                            Tournament Name
-                                        </th>
-                                        <th>
-                                            Number of players
-                                        </th>
-                                        <th>
-                                            Players
-                                        </th>
-                                        <th>
-                                            Start time
-                                        </th>
-                                        <th>
-                                            Winner
-                                        </th>
-                                        <th>
-                                            Operation
-                                        </th>
-                                        </thead>
-                                        <tbody>
-                                        <% for(let i =0; i < matches.length; i++){ %>
-                                        <tr>
-
-                                            <td>
-                                                <%= i+1 %>
-                                            </td>
-                                            <td>
-                                                <%= matches[i].mName %>
-                                            </td>
-                                            <td>
-                                                <%= matches[i].mNumber %>
-                                            </td>
-                                            <td>
-                                                <%= matches[i].mPlayers %>
-                                            </td>
-                                            <td>
-                                                <%= matches[i].mActiveTime %>
-                                            </td>
-                                            <td class="text-primary">
-                                                <%= matches[i].mWinner %>
-                                            </td>
-                                            <td>
-                                                <a href="/users/modifyTournament/<%= matches[i]._id %>" class="btn btn-secondary btn-sm">Modify</a>
-                                                <a href="/users/deleteTournament/<%= matches[i]._id %>"  class="btn btn-danger btn-sm">Delete<a/>
-                                            </td>
-
-                                        </tr>
-
-                                        <% } %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addTitle">Modify my tournament</h5>
                         </div>
+                        <div class="modal-body">
+                            <input id="mId" type="text" value="<%= match._id %>" hidden>
+                            <div class="form-group">
+                                <label for="mName">Tournament name</label>
+                                <input name="mName" type="text" class="form-control" id="mName" aria-describedby="emailHelp" value="<%= match.mName %>">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mNumber">Number of players</label>
+                                <input name="mNumber" type="number" class="form-control" id="mNumber" value="<%= match.mNumber %>">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mPlayers">Players</label>
+                                <input name="mPlayers" type="text" class="form-control" id="mPlayers" value="<%= match.mPalyers %>">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mActiveTime">Start time</label>
+                                <input name="mActiveTime" type="date" class="form-control" id="mActiveTime" value="<%= match.mActiveTime %>">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mWinner">Winner</label>
+                                <input name="mWinner" type="text" class="form-control" id="mWinner" value="<%= match.mWinner %>">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mDescription">Description</label>
+                                <input name="mDescription" type="text" class="form-control" id="mDescription" value="<%= match.mDescription %>">
+                            </div>
+
+
+                            <button class="btn btn-primary" id="modifyBtn">Save</button>
+                            <a class="btn btn-default" data-dismiss="modal" href="/users/">Cancel</a>
                     </div>
                 </div>
             </div>
@@ -240,6 +165,7 @@
             </div>
         </footer>
     </div>
+</div>
 </div>
 <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
@@ -316,6 +242,7 @@
 <script src="/public/js/sidebar.js"></script>
 <script src="/public/js/addTournament.js"></script>
 <script src="/public/js/spop.min.js"></script>
+<script src="/public/js/modifyTournament.js"></script>
 <script>
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
